@@ -1,0 +1,103 @@
+\documentclass[letterpaper,12pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Fonts
+    \usepackage{mathptmx} %Times New roman
+    \def\ttdefault{lmtt} %latin modern mono
+    \usepackage{setspace} %double space
+    \usepackage{microtype} %pretty kerning
+    
+\usepackage{lipsum} %generates lorem ipsum
+
+\usepackage{multicol} %later on use \begin{multicols}{#}....\end{multicols}
+    \setlength{\columnsep}{0.5in}
+    \usepackage[top=1in, bottom=1in, left=1in, right =1in, headsep=0.125in]{geometry}
+    
+%Bibliograpy
+\usepackage{csquotes}
+  \usepackage[notes,backend=biber]{biblatex-chicago}
+  \bibliography{tnr} %% CHANGE THIS ON NEW DOCS
+  \renewcommand*{\bibfont}{\raggedright}
+  \usepackage[ragged,hang]{footmisc} %footnote customisation package
+    \footnotemargin 0.125in %space between number and text
+    \addtolength{\skip\footins}{1pc plus 5pt} %space above footnote line
+
+\usepackage{sectsty}
+    \allsectionsfont{\sc\Large\raggedright\mdseries}
+    
+%TITLE and AUTHOR info
+\title{\sc Title}
+\author{Name}
+\def\course{PS-6110} %defines the variable "course"
+  \makeatletter %this sets variables for invoking title, author &c
+  \let\runauthor\@author
+  \let\runtitle\@title
+  \let\runCourse\course %invokes "course"
+\date{\runCourse} %using date for now, or leave blank
+
+\usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \cfoot{}
+    \fancyhead[RE,LO]{\runtitle}
+    \fancyhead[LE,RO]{\runauthor}
+    \fancyhf[FLE,FRO]{\thepage}
+    \fancyhf[FRE,FLO]{\runCourse}
+    
+\begin{document}
+\doublespace
+
+\maketitle
+
+\section*{Introduction}
+
+\textit{anything in here is slanted} asd;klfjasdkl;fjasdknfa;sdjklhkagsfnljnasdgjk;nasdgkl;nasd asd;kljf ;aklsdjf;aklsdjf ajsdkf \\ l;asd ;fghasddgjk;hasdf
+
+&
+
+\textbf{anything here is bold}
+
+\texttt{anything here is monospace}
+
+\textsc{SMALL caPS}
+
+
+
+\section{due}
+\lipsum[1]\autocite{fukuyama1989end}
+
+\lipsum[1]\autocite[10]{fukuyama1989end}
+
+\begin{quote}
+\singlespace
+
+``\lipsum[1]''
+
+
+\end{quote}
+
+\begin{multicols}{2}
+
+\lipsum
+
+\end{multicols}
+
+
+\nocite{kreps}
+  \nocite{kreps}
+  \nocite{hazelton}
+  \nocite{horowitzchina}
+  \nocite{shah2018us}
+  \nocite{yousaf}
+  \nocite{cronin}
+  \nocite{goldbergdronedispatch}
+  \nocite{rigterink2021wane}
+  \nocite{fisk2019emotions}
+  \nocite{borg2020assembling}
+  \nocite{bachman2017nyt}
+  \nocite{johnston2016impact}
+\pagebreak
+
+{\singlespace \printbibliography[title=Bibliography]}
+
+\end{document}
